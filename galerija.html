@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit & Strong - Galerija</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+       <div class="container">
+            <div id="logo">
+                <a href="index.html"><img src="img/logo.webp" alt="Fit & Strong Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Početna</a></li>
+                    <li><a href="o-nama.html">O nama</a></li>
+                    <li><a href="usluge.html">Usluge</a></li>
+                    <li><a href="galerija.html">Galerija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section id="gallery-hero">
+        <div class="container">
+      <br>
+            <br>
+            <br>
+            <br>
+            <h1>Galerija</h1>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">Sve</button>
+                <button class="filter-btn" data-filter="teretana">Teretana</button>
+                <button class="filter-btn" data-filter="grupni">Grupni treninzi</button>
+                <button class="filter-btn" data-filter="treneri">Treneri</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item teretana">
+                    <img src="img/icon-equipment.png" alt="Teretana">
+                    <div class="overlay">
+                        <h3>Teretana</h3>
+                        <p>Naša opremljena teretana</p>
+                    </div>
+                </div>
+                <div class="gallery-item grupni">
+                    <img src="img/grupni.jpg" alt="Grupni trening">
+                    <div class="overlay">
+                        <h3>Grupni trening</h3>
+                        <p>Zabavni grupni treninzi</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="lightbox" class="hidden">
+        <div class="lightbox-content">
+            <span class="close-btn">&times;</span>
+            <img src="" alt="" id="lightbox-img">
+            <div class="lightbox-nav">
+                <button id="prev-btn">&#10094;</button>
+                <button id="next-btn">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <h3>Fit & Strong</h3>
+                <p>Najbolja teretana u gradu sa preko 10 godina iskustva.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Brzi linkovi</h3>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="o-nama.html">O nama</a></li>
+                    <li><a href="usluge.html">Usluge</a></li>
+                    <li><a href="galerija.html">Galerija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Kontakt</h3>
+                <p>Adresa: Bulevar Oslobođenja 123</p>
+                <p>Telefon: 021/456-789</p>
+                <p>Email: info@fitstrong.rs</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Fit & Strong. Sva prava zadržana.</p>
+        </div>
+    </footer>
+
+    <script src="js/gallery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
