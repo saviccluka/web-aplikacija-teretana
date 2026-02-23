@@ -1,0 +1,58 @@
+﻿@page "/addBook"
+@rendermode InteractiveServer
+@using BusinessLayer;
+@using DataLayer.Model
+
+@inject NavigationManager NV
+@inject IBusinessBook bus
+
+<h3>AddBook</h3>
+@if (book != null)
+{
+    <form>
+        <div class="mb-3">
+            <label for="exampleInput1" class="form-label">Title</label>
+            <input @bind="book.Title" type="text" class="form-control" id="exampleInput1">
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInput2" class="form-label">Title</label>
+            <input @bind="book.Description" type="text" class="form-control" id="exampleInput2">
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInput3" class="form-label">Title</label>
+            <input @bind="book.NumberOfPage" type="number" class="form-control" id="exampleInput3">
+
+        </div>
+
+
+        <button type="button" @onclick="Save" class="btn btn-primary">Submit</button>
+    <p class="text-danger">@message</p>
+    
+    </form>
+}
+
+@code {
+    private Book? book;
+    private string? message;
+
+    protected override void OnInitialized()
+    {
+        book = new Book();
+    }
+
+    private void Save()
+    {
+        if (book != null)
+        {
+            string res = bus.InsertBook(book);
+            if (res == "Uspesno!")
+            {
+                NV.NavigateTo("/books");
+            }
+            else
+                message = res;
+        }
+    }
+}

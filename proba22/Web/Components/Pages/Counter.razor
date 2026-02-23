@@ -1,0 +1,53 @@
+﻿@page "/books"
+@rendermode InteractiveServer
+@using BusinessLayer;
+@using DataLayer.Model
+
+@inject   NavigationManager NV
+@inject IBusinessBook bus
+
+<PageTitle>Books</PageTitle>
+
+<h1>Books</h1>
+<button type="button" @onclick="Add" class="btn btn-primary" >Add Book</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Number Of Page</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Books != null)
+        {
+            @foreach (var item in Books)
+            {
+                <tr>
+
+                    <td>@item.Id</td>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td>@item.NumberOfPage</td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>
+
+
+@code {
+    private List<Book>? Books{ get; set; }
+
+    protected override void OnInitialized()
+    {
+        Books = bus.GetBooksWith50();
+    }
+
+    private void Add()
+    {
+        NV.NavigateTo("/addBook");
+    }
+}
